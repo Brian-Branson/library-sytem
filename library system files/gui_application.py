@@ -45,7 +45,7 @@ class LibraryGUI:
             "primary": "#e74c3c",
             "accent": "#f39c12",
             "background": "#ecf0f1",
-            "card_bg": "#ffffff",
+            "card_bg": "#ffffffe7",
             "sidebar_bg": "#2c3e50",
             "text_color": "#2c3e50",
             "button_bg": "#e74c3c",
