@@ -26,31 +26,30 @@ class LibraryGUI:
         self.show_frame("Login")
 
     def setup_themes(self):
-        # Original colors defined, but we'll use them more vibrantly
         self.student_colors = {
-            "primary": "#3498db",  # Original: A distinct, clear blue
-            "accent": "#2ecc71",   # Original: A bright, fresh green
-            "background": "#ecf0f1", # Original: A very light, neutral gray
-            "card_bg": "#ffffff",  # Original: White
-            "sidebar_bg": "#34495e", # Original: A dark blue-gray (Login background)
-            "text_color": "#2c3e50", # Original: Dark gray for general text
-            "button_bg": "#3498db", # Using primary for main buttons
-            "button_hover": "#2980b9", # Darker shade of primary for hover
+            "primary": "#3498db",
+            "accent": "#2ecc71",
+            "background": "#ecf0f1",
+            "card_bg": "#ffffff",
+            "sidebar_bg": "#34495e",
+            "text_color": "#2c3e50",
+            "button_bg": "#3498db",
+            "button_hover": "#2980b9",
             "status_colors": {
-                "active": "#28A745",       # Green for active/available
-                "nearing_due": "#FFC107",  # Orange for warning
-                "overdue": "#DC3545"       # Red for overdue/danger
+                "active": "#28A745",
+                "nearing_due": "#FFC107",
+                "overdue": "#DC3545"
             }
         }
         self.librarian_colors = {
-            "primary": "#e74c3c",      # Original: A strong, bold red
-            "accent": "#f39c12",       # Original: A warm orange
-            "background": "#ecf0f1",   # Original: Light neutral gray
+            "primary": "#e74c3c",
+            "accent": "#f39c12",
+            "background": "#ecf0f1",
             "card_bg": "#ffffff",
             "sidebar_bg": "#2c3e50",
             "text_color": "#2c3e50",
-            "button_bg": "#e74c3c",    # Using primary for main buttons
-            "button_hover": "#c0392b", # Darker shade of primary for hover
+            "button_bg": "#e74c3c",
+            "button_hover": "#c0392b",
             "status_colors": {
                 "active": "#28A745",
                 "nearing_due": "#FFC107",
@@ -58,14 +57,14 @@ class LibraryGUI:
             }
         }
         self.admin_colors = {
-            "primary": "#9b59b6",      # Original: A rich, deep purple
-            "accent": "#1abc9c",       # Original: A vibrant turquoise
-            "background": "#ecf0f1",   # Original: Light neutral gray
+            "primary": "#9b59b6",
+            "accent": "#1abc9c",
+            "background": "#ecf0f1",
             "card_bg": "#ffffff",
             "sidebar_bg": "#2c3e50",
             "text_color": "#2c3e50",
-            "button_bg": "#9b59b6",    # Using primary for main buttons
-            "button_hover": "#8e44ad", # Darker shade of primary for hover
+            "button_bg": "#9b59b6",
+            "button_hover": "#8e44ad",
             "status_colors": {
                 "active": "#28A745",
                 "nearing_due": "#FFC107",
@@ -73,19 +72,16 @@ class LibraryGUI:
             }
         }
 
-        # Student Dashboard Styles - Emphasizing Primary/Accent
         self.style.configure('Student.TFrame', background=self.student_colors["background"])
-        self.style.configure('Student.TLabel', background=self.student_colors["background"], foreground=self.student_colors["text_color"]) # Use dark text on light background
-        self.style.configure('Student.TButton', background=self.student_colors["button_bg"], foreground=self.student_colors["card_bg"], borderwidth=0, relief='flat') # White text on vibrant button, flat design
+        self.style.configure('Student.TLabel', background=self.student_colors["background"], foreground=self.student_colors["text_color"])
+        self.style.configure('Student.TButton', background=self.student_colors["button_bg"], foreground=self.student_colors["card_bg"], borderwidth=0, relief='flat')
         self.style.map('Student.TButton', background=[('active', self.student_colors["button_hover"])])
-        self.style.configure('Student.Treeview.Heading', background=self.student_colors["primary"], foreground=self.student_colors["card_bg"], font=("Segoe UI", 10, "bold")) # Primary heading, white text
+        self.style.configure('Student.Treeview.Heading', background=self.student_colors["primary"], foreground=self.student_colors["card_bg"], font=("Segoe UI", 10, "bold"))
         self.style.configure('Student.Treeview', background=self.student_colors["card_bg"], fieldbackground=self.student_colors["card_bg"], foreground=self.student_colors["text_color"])
-        self.style.map('Student.Treeview', background=[('selected', self.student_colors["accent"])]) # Vibrant accent for selection
-        self.style.configure('Student.TEntry', fieldbackground=self.student_colors["card_bg"], foreground=self.student_colors["text_color"], bordercolor=self.student_colors["primary"]) # Primary border for input
+        self.style.map('Student.Treeview', background=[('selected', self.student_colors["accent"])])
+        self.style.configure('Student.TEntry', fieldbackground=self.student_colors["card_bg"], foreground=self.student_colors["text_color"], bordercolor=self.student_colors["primary"])
         self.style.configure('Student.TCombobox', fieldbackground=self.student_colors["card_bg"], selectbackground=self.student_colors["card_bg"], selectforeground=self.student_colors["text_color"], bordercolor=self.student_colors["primary"])
 
-
-        # Librarian Dashboard Styles - Emphasizing Primary/Accent
         self.style.configure('Librarian.TFrame', background=self.librarian_colors["background"])
         self.style.configure('Librarian.TLabel', background=self.librarian_colors["background"], foreground=self.librarian_colors["text_color"])
         self.style.configure('Librarian.TButton', background=self.librarian_colors["button_bg"], foreground=self.librarian_colors["card_bg"], borderwidth=0, relief='flat')
@@ -96,8 +92,6 @@ class LibraryGUI:
         self.style.configure('Librarian.TEntry', fieldbackground=self.librarian_colors["card_bg"], foreground=self.librarian_colors["text_color"], bordercolor=self.librarian_colors["primary"])
         self.style.configure('Librarian.TCombobox', fieldbackground=self.librarian_colors["card_bg"], selectbackground=self.librarian_colors["card_bg"], selectforeground=self.librarian_colors["text_color"], bordercolor=self.librarian_colors["primary"])
 
-
-        # Admin Dashboard Styles - Emphasizing Primary/Accent
         self.style.configure('Admin.TFrame', background=self.admin_colors["background"])
         self.style.configure('Admin.TLabel', background=self.admin_colors["background"], foreground=self.admin_colors["text_color"])
         self.style.configure('Admin.TButton', background=self.admin_colors["button_bg"], foreground=self.admin_colors["card_bg"], borderwidth=0, relief='flat')
@@ -107,7 +101,6 @@ class LibraryGUI:
         self.style.map('Admin.Treeview', background=[('selected', self.admin_colors["accent"])])
         self.style.configure('Admin.TEntry', fieldbackground=self.admin_colors["card_bg"], foreground=self.admin_colors["text_color"], bordercolor=self.admin_colors["primary"])
         self.style.configure('Admin.TCombobox', fieldbackground=self.admin_colors["card_bg"], selectbackground=self.admin_colors["card_bg"], selectforeground=self.admin_colors["text_color"], bordercolor=self.admin_colors["primary"])
-
 
     def apply_dashboard_style(self, frame, role):
         if role.lower() == "student":
@@ -136,7 +129,7 @@ class LibraryGUI:
                 widget.configure(style=f'{style_prefix}Treeview')
                 self.style.configure(f'{style_prefix}Treeview.Heading',
                                      background=current_colors["primary"],
-                                     foreground=current_colors["card_bg"]) # Use white text on vibrant heading
+                                     foreground=current_colors["card_bg"])
             elif isinstance(widget, ttk.Entry):
                 widget.configure(style=f'{style_prefix}TEntry')
             elif isinstance(widget, ttk.Combobox):
@@ -161,7 +154,6 @@ class LibraryGUI:
             elif frame_name == "AdminDashboard":
                 self.apply_dashboard_style(frame, "administrator")
 
-
     def create_login_frame(self):
         frame = tk.Frame(self.root, bg="#931cd4")
         self.frames["Login"] = frame
@@ -181,7 +173,6 @@ class LibraryGUI:
         lbl_pw.pack(pady=(10, 5))
         self.entry_password = tk.Entry(card, show="*")
         self.entry_password.pack(ipady=5, ipadx=5)
-
 
         login_btn = tk.Button(card, text="Login", bg="#3498db", fg="white", activebackground="#2980b9",
                                command=self.handle_login)
@@ -572,7 +563,6 @@ class LibraryGUI:
         ttk.Label(frame, text="System Monitoring:", font=("Segoe UI", 12, "bold")).pack(pady=(10, 5))
         ttk.Button(frame, text="View Audit Logs").pack(pady=2)
         ttk.Button(frame, text="Backup Database").pack(pady=2)
-
 
     def build_admin_dashboard(self):
         pass
